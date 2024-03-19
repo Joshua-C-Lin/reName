@@ -1,110 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joshua Rename</title>
-  <link rel="icon" href="img/heart.png" type="image/x-icon">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      background-color: #F0F0F0;
-      background-image: url('./img/love.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-    }
-    div.container {
-      margin: 0 auto;
-      max-width: 600px;
-      height: 100vh;
-    }
-    button {
-      margin-top: 10px; 
-    }
-    @media screen and (max-width: 600px) {
-      div.container {
-        max-width: 100%;
-        padding: 0 10px;
-      }
-    }
-    .love-img {
-      width: 100%;
-    }
-    #joshuaName {
-      font-size: 42px;
-      min-height: 60px;
-    }
-    #pennyName {
-      font-size: 42px;
-      min-height: 60px;
-    }
-    button {
-      width: 150px;
-      height: 58px;
-      font-size: 16px;
-      border-radius: 8px;
-    }
-    .joshuaBtn {
-      border: 2px solid skyblue;
-    }
-    .pannyBtn {
-      border: 2px solid pink;
-    }
-    .heart {
-      margin-top: 20px;
-      width: 30%;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div>
-      <h1>Joshua：</h1>
-      <div id="joshuaName"></div>
-      <div>
-        <button class="joshuaBtn" onclick="genJoshuaName()">生成新名字</button>
-      </div>
-    </div>
-    <hr>
-    <div>
-      <h1>Penny：</h1>
-      <div id="pennyName"></div>
-      <div>
-        <button class="pannyBtn" onclick="genPennyName()">生成新名字</button>
-      </div>
-    </div>
-    <img class="heart" src="./img/heart.png" alt="">
-  </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Joshua Rename</title>
+		<link rel="icon" href="img/heart.png" type="image/x-icon" />
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				text-align: center;
+				margin: 0;
+				background-color: #f0f0f0;
+				background-image: url("./img/love.png");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center bottom;
+			}
+			div.container {
+				margin: 0 auto;
+				max-width: 600px;
+				height: 100vh;
+			}
+			button {
+				margin-top: 10px;
+			}
+			@media screen and (max-width: 600px) {
+				div.container {
+					max-width: 100%;
+					padding: 0 10px;
+				}
+			}
+			.love-img {
+				width: 100%;
+			}
+			#joshuaName {
+				font-size: 42px;
+				min-height: 60px;
+			}
+			#pennyName {
+				font-size: 42px;
+				min-height: 60px;
+			}
+			button {
+				width: 150px;
+				height: 58px;
+				font-size: 16px;
+				border-radius: 8px;
+			}
+			.joshuaBtn {
+				border: 2px solid skyblue;
+			}
+			.pannyBtn {
+				border: 2px solid pink;
+			}
+			.heart {
+				margin-top: 20px;
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<h1>Joshua：</h1>
+				<div id="joshuaName"></div>
+				<div>
+					<button class="joshuaBtn" onclick="genJoshuaName()">
+						生成新名字
+					</button>
+				</div>
+			</div>
+			<hr />
+			<div>
+				<h1>Penny：</h1>
+				<div id="pennyName"></div>
+				<div>
+					<button class="pannyBtn" onclick="genPennyName()">
+						生成新名字
+					</button>
+				</div>
+			</div>
+			<img class="heart" src="./img/heart.png" alt="" />
+		</div>
 
-  <script>
-    function genJoshuaName() {
-      var lastName = "林";
-      var second = ["勳", "叡", "穎", "翰", "璋", "諹", "諭", "諺", "諳", "澄", "潮", "澔"];
-      var third = ["郅", "揚", "湶", "詮", "詰", "詳", "裕", "棋", "聖", "群", "楷", "渤"];
+		<script>
+			function genJoshuaName() {
+				var lastName = "林";
+				var second = [
+					"勳",
+					"叡",
+					"穎",
+					"翰",
+					"璋",
+					"諹",
+					"諭",
+					"諺",
+					"諳",
+					"澄",
+					"潮",
+					"澔",
+				];
+				var third = [
+					"郅",
+					"揚",
+					"湶",
+					"詮",
+					"詰",
+					"詳",
+					"裕",
+					"棋",
+					"聖",
+					"群",
+					"楷",
+					"渤",
+				];
 
-      var getSecond = second[Math.floor(Math.random() * second.length)];
+				var getSecond =
+					second[Math.floor(Math.random() * second.length)];
 
-      var getThird = third[Math.floor(Math.random() * third.length)];
+				var getThird = third[Math.floor(Math.random() * third.length)];
 
-      var joshua = lastName + getSecond + getThird;
-      document.getElementById("joshuaName").innerText = joshua;
-    }
+				var joshua = lastName + getSecond + getThird;
+				document.getElementById("joshuaName").innerText = joshua;
+			}
 
-    function genPennyName() {
-      var lastNameP = "陳";
-      var secondP = ["萱", "葳", "葶", "緗", "箬", "箴", "嫺", "霈", "靚", "緹", "嬅", "瑩"];
-      var thirdP = ["燦", "嬪", "營", "蔓", "黛", "鎂", "蔆", "蓺", "嚀", "瞳", "轃", "濃"];
+			function genPennyName() {
+				var lastNameP = "陳";
+				var secondP = ["萱", "葶", "緗", "箬", "嫻", "靚", "緹", "嬅"];
+				var thirdP = ["嬪", "蔓", "黛", "蓺", "嚀", "瞳", "轃"];
 
-      var getSecondP = secondP[Math.floor(Math.random() * secondP.length)];
+				var getSecondP =
+					secondP[Math.floor(Math.random() * secondP.length)];
 
-      var getThirdP = thirdP[Math.floor(Math.random() * thirdP.length)];
+				var getThirdP =
+					thirdP[Math.floor(Math.random() * thirdP.length)];
 
-      var penny = lastNameP + getSecondP + getThirdP;
-      document.getElementById("pennyName").innerText = penny;
-    }
-  </script>
-</body>
+				var penny = lastNameP + getSecondP + getThirdP;
+				document.getElementById("pennyName").innerText = penny;
+			}
+		</script>
+	</body>
 </html>
